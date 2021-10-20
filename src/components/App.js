@@ -79,7 +79,8 @@ class App extends React.Component {
         }
         {this.state.mode !== AppMode.LOGIN && this.state.menuOpen && 
           <SideMenu 
-            toggleMenuOpen={this.toggleMenuOpen}/>}
+            toggleMenuOpen={this.toggleMenuOpen}
+            setMode={this.setMode}/>}
       </>
     ); 
   }

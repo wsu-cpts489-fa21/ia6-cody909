@@ -1,7 +1,9 @@
 import React from "react";
 import { useEffect, useRef } from "react";
+import AppMode from './AppMode'
 
-function useOutsideAlerter(ref, toggleMenuOpen) {
+function useOutsideClickHandler(ref, toggleMenuOpen) {
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -17,6 +19,7 @@ function useOutsideAlerter(ref, toggleMenuOpen) {
 }
 
 function SideMenu(props) {
+
   useEffect(() => {
     function handleKeyDown(event) {
       console.log("Key: " + event.key);
@@ -70,7 +73,12 @@ function SideMenu(props) {
   const aboutRef = useRef("null");
   const logoutRef = useRef("null");
 
-  useOutsideAlerter(menuRef, props.toggleMenuOpen);
+  useOutsideClickHandler(menuRef, props.toggleMenuOpen);
+
+  const logout = () => {
+    props.toggleMenuOpen();
+    props.setMode(AppMode.LOGIN);
+  }
 
   return (
     <ul
@@ -86,7 +94,7 @@ function SideMenu(props) {
       <li ref={aboutRef} role="menuitem" tabIndex="-1">
         About
       </li>
-      <li ref={logoutRef} role="menuitem" tabIndex="-1">
+      <li onClick={logout} ref={logoutRef} role="menuitem" tabIndex="-1">
         Log Out
       </li>
     </ul>
