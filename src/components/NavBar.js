@@ -12,10 +12,14 @@ function NavBar(props) {
   };
 
   const [displaySearchBox, setDisplaySearchBox] = useState(false);
-
   const searchBtnClickHandler = () => {
     setDisplaySearchBox((prevState) => !prevState);
   };
+
+  const profileBtnClickHandler = () => {
+    props.toggleModalOpen();
+  }
+
 
   return (
     <header className="navbar">
@@ -70,6 +74,7 @@ function NavBar(props) {
             </button>
             <button
               id="profileBtn"
+              onClick={profileBtnClickHandler}
               type="button"
               className={"navbar-btn navbar-profile-btn " + (props.menuOpen || props.modalOpen ? "disabled" : "")}
               aria-label="Account and Profile Settings"

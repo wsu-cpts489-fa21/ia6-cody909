@@ -8,7 +8,7 @@ import CoursesPage from './CoursesPage.js';
 import BuddiesPage from './BuddiesPage.js';
 import AppMode from './AppMode.js';
 import SideMenu from './SideMenu.js';
-
+import ProfileSettings from './ProfileSettings.js';
 class App extends React.Component {
 
   constructor(props) {
@@ -28,7 +28,7 @@ class App extends React.Component {
   }
 
   toggleModalOpen = () => {
-    this.setState(prevState => ({dialogOpen: !prevState.dialogOpen}));
+    this.setState(prevState => ({modalOpen: !prevState.modalOpen}));
   }
 
   setUserId = (Id) => {
@@ -49,7 +49,7 @@ class App extends React.Component {
                   setMode={this.setMode} 
                   menuOpen={this.state.menuOpen}
                   modalOpen={this.state.modalOpen}/> 
-        {
+        { !this.state.modalOpen &&
           {LoginMode:
             <LoginPage setMode={this.setMode}
                        modalOpen={this.state.modalOpen}
@@ -81,6 +81,10 @@ class App extends React.Component {
           <SideMenu 
             toggleMenuOpen={this.toggleMenuOpen}
             setMode={this.setMode}/>}
+        {this.state.modalOpen && 
+          <ProfileSettings modalOpen={this.state.modalOpen}
+                          toggleModalOpen={this.toggleModalOpen}
+          />}
       </>
     ); 
   }
