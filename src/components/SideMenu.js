@@ -57,6 +57,7 @@ function SideMenu(props) {
           break;
         case "Escape":
           props.toggleMenuOpen();
+          break;
         default:
           break;
       }
