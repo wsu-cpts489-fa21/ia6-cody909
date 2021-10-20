@@ -1,21 +1,28 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons'
 import logo from '../images/sslogo.png'
+import AppMode from './AppMode'
+import { useRef } from 'react'
 
 
-class NavBar extends React.Component {
-    
-    render() {
+function NavBar (props) {
+
+      const menuBtnClickHandler = () => {
+        if(props.mode === AppMode.LOGIN) return;
+        props.toggleMenuOpen();
+      }
+
+
        return (
         <header className="navbar">  
         <a id="sLink" className="skip-link" tabIndex="0">
          Skip to content</a>
-         <button id="menuBtn" type="button" className="navbar-btn" 
+         <button id="menuBtn" type="button" className="navbar-btn"
             title="Menu" aria-controls="sideMenu" 
             aria-label="Actions" aria-haspopup="true" 
-            aria-expanded="false">
-            <FontAwesomeIcon icon={faBars} className="navbar-btn-icon"/>
+            aria-expanded="false" onClick={() => menuBtnClickHandler()}>
+            <FontAwesomeIcon icon={props.menuOpen ? faTimes : faBars} className="navbar-btn-icon"/>
           </button>
           <img src={logo} className="navbar-app-icon" 
             alt="SpeedScore logo" />
@@ -35,7 +42,6 @@ class NavBar extends React.Component {
             </div>
       </header>
     ); 
-  }
 }
 
 export default NavBar;

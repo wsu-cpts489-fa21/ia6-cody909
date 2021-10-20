@@ -7,6 +7,7 @@ import RoundsPage from './RoundsPage.js';
 import CoursesPage from './CoursesPage.js';
 import BuddiesPage from './BuddiesPage.js';
 import AppMode from './AppMode.js';
+import SideMenu from './SideMenu.js';
 
 class App extends React.Component {
 
@@ -39,11 +40,11 @@ class App extends React.Component {
       <>
         <NavBar mode={this.state.mode}
                 menuOpen={this.state.menuOpen}
-                toggleMenuOpen={this.state.toggleMenuOpen}
+                toggleMenuOpen={this.toggleMenuOpen}
                 modalOpen={this.state.modalOpen}
                 toggleModalOpen={this.toggleModalOpen}
                 userId={this.state.userId}
-                setUserId={this.setUserid} /> 
+                setUserId={this.setUserId} /> 
         <ModeTabs mode={this.state.mode}
                   setMode={this.setMode} 
                   menuOpen={this.state.menuOpen}
@@ -76,6 +77,9 @@ class App extends React.Component {
                         userId={this.state.userId}/>
         }[this.state.mode]
         }
+        {this.state.mode !== AppMode.LOGIN && this.state.menuOpen && 
+          <SideMenu 
+            toggleMenuOpen={this.toggleMenuOpen}/>}
       </>
     ); 
   }
