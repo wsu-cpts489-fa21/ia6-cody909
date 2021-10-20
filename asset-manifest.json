@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/ia6/static/css/main.4421ff6d.chunk.css",
-    "main.js": "/ia6/static/js/main.a21b82cf.chunk.js",
-    "main.js.map": "/ia6/static/js/main.a21b82cf.chunk.js.map",
-    "runtime-main.js": "/ia6/static/js/runtime-main.4342ca35.js",
-    "runtime-main.js.map": "/ia6/static/js/runtime-main.4342ca35.js.map",
-    "static/css/2.0f1110e3.chunk.css": "/ia6/static/css/2.0f1110e3.chunk.css",
-    "static/js/2.e66f1350.chunk.js": "/ia6/static/js/2.e66f1350.chunk.js",
-    "static/js/2.e66f1350.chunk.js.map": "/ia6/static/js/2.e66f1350.chunk.js.map",
-    "index.html": "/ia6/index.html",
-    "static/css/2.0f1110e3.chunk.css.map": "/ia6/static/css/2.0f1110e3.chunk.css.map",
-    "static/css/main.4421ff6d.chunk.css.map": "/ia6/static/css/main.4421ff6d.chunk.css.map",
-    "static/js/2.e66f1350.chunk.js.LICENSE.txt": "/ia6/static/js/2.e66f1350.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/ia6/static/media/DefaultProfilePic.1e51247e.jpg",
-    "static/media/sslogo.54514490.png": "/ia6/static/media/sslogo.54514490.png",
-    "static/media/sslogo2.c60d6a79.png": "/ia6/static/media/sslogo2.c60d6a79.png"
+    "main.css": "/ia6-cody909/static/css/main.7f2f5061.chunk.css",
+    "main.js": "/ia6-cody909/static/js/main.a21b82cf.chunk.js",
+    "main.js.map": "/ia6-cody909/static/js/main.a21b82cf.chunk.js.map",
+    "runtime-main.js": "/ia6-cody909/static/js/runtime-main.ca523533.js",
+    "runtime-main.js.map": "/ia6-cody909/static/js/runtime-main.ca523533.js.map",
+    "static/css/2.0f1110e3.chunk.css": "/ia6-cody909/static/css/2.0f1110e3.chunk.css",
+    "static/js/2.e66f1350.chunk.js": "/ia6-cody909/static/js/2.e66f1350.chunk.js",
+    "static/js/2.e66f1350.chunk.js.map": "/ia6-cody909/static/js/2.e66f1350.chunk.js.map",
+    "index.html": "/ia6-cody909/index.html",
+    "static/css/2.0f1110e3.chunk.css.map": "/ia6-cody909/static/css/2.0f1110e3.chunk.css.map",
+    "static/css/main.7f2f5061.chunk.css.map": "/ia6-cody909/static/css/main.7f2f5061.chunk.css.map",
+    "static/js/2.e66f1350.chunk.js.LICENSE.txt": "/ia6-cody909/static/js/2.e66f1350.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/ia6-cody909/static/media/DefaultProfilePic.1e51247e.jpg",
+    "static/media/sslogo.54514490.png": "/ia6-cody909/static/media/sslogo.54514490.png",
+    "static/media/sslogo2.c60d6a79.png": "/ia6-cody909/static/media/sslogo2.c60d6a79.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.4342ca35.js",
+    "static/js/runtime-main.ca523533.js",
     "static/css/2.0f1110e3.chunk.css",
     "static/js/2.e66f1350.chunk.js",
-    "static/css/main.4421ff6d.chunk.css",
+    "static/css/main.7f2f5061.chunk.css",
     "static/js/main.a21b82cf.chunk.js"
   ]
 }
