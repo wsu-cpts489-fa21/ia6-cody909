@@ -11,10 +11,10 @@ function NavBar(props) {
     props.toggleMenuOpen();
   };
 
-  const [displaySearchBox, setDisplaySearchBox] = useState('false');
+  const [displaySearchBox, setDisplaySearchBox] = useState(false);
 
   const searchBtnClickHandler = () => {
-    setDisplaySearchBox((prevState) => !prevState)
+    setDisplaySearchBox((prevState) => !prevState);
   };
 
   return (
@@ -22,55 +22,60 @@ function NavBar(props) {
       <a id="sLink" className="skip-link" tabIndex="0">
         Skip to content
       </a>
-      <button
-        id="menuBtn"
-        type="button"
-        className="navbar-btn"
-        title="Menu"
-        aria-controls="sideMenu"
-        aria-label="Actions"
-        aria-haspopup="true"
-        aria-expanded="false"
-        onClick={() => menuBtnClickHandler()}
-      >
-        <FontAwesomeIcon
-          icon={props.menuOpen ? faTimes : faBars}
-          className="navbar-btn-icon"
-        />
-      </button>
+      {props.mode !== AppMode.LOGIN && !props.modalOpen &&(
+        <button
+          id="menuBtn"
+          type="button"
+          className="navbar-btn"
+          title="Menu"
+          aria-controls="sideMenu"
+          aria-label="Actions"
+          aria-haspopup="true"
+          aria-expanded="false"
+          onClick={() => menuBtnClickHandler()}
+        >
+          <FontAwesomeIcon
+            icon={props.menuOpen ? faTimes : faBars}
+            className="navbar-btn-icon"
+          />
+        </button>
+      )}
       <img src={logo} className="navbar-app-icon" alt="SpeedScore logo" />
       <h1 id="appName" className="navbar-title">
         SpeedScore
       </h1>
       <div className="navbar-right-items">
-        <input
-          id="searchBox"
-          className="form-control hidden"
-          aria-label="Search Rounds"
-          size="30"
-          type="search"
-        />
-        {displaySearchBox && <input id="searchBox" className="form-control" />}
-        {props.mode !== AppMode.LOGIN && (
-          <button
-            id="searchBtn"
-            type="button"
-            className="navbar-btn"
-            aria-label="Open Rounds Search"
-          >
-            <FontAwesomeIcon
-              onClick={searchBtnClickHandler}
-              icon={faSearch}
-              className="navbar-btn-icon"
-            />
-          </button>
+        {displaySearchBox && (
+          <input
+            id="searchBox"
+            className="form-control"
+            aria-label="Search Rounds"
+            size="30"
+            type="search"
+          />
         )}
-        <button
-          id="profileBtn"
-          type="button"
-          className="navbar-btn navbar-profile-btn hidden"
-          aria-label="Account and Profile Settings"
-        ></button>
+        {props.mode !== AppMode.LOGIN && !props.modalOpen && (
+          <>
+            <button
+              id="searchBtn"
+              type="button"
+              className={"navbar-btn" + (props.menuOpen || props.modalOpen ? " disabled" : "")}
+              aria-label="Open Rounds Search"
+            >
+              <FontAwesomeIcon
+                onClick={searchBtnClickHandler}
+                icon={faSearch}
+                className="navbar-btn-icon"
+              />
+            </button>
+            <button
+              id="profileBtn"
+              type="button"
+              className={"navbar-btn navbar-profile-btn " + (props.menuOpen || props.modalOpen ? "disabled" : "")}
+              aria-label="Account and Profile Settings"
+            ></button>
+          </>
+        )}
       </div>
     </header>
   );
