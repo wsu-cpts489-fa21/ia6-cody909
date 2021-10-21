@@ -22,7 +22,6 @@ function SideMenu(props) {
 
   useEffect(() => {
     function handleKeyDown(event) {
-      console.log("Key: " + event.key);
       switch (event.key) {
         case "ArrowUp":
           if (settingsRef.current === document.activeElement) {
@@ -85,17 +84,18 @@ function SideMenu(props) {
     <ul
       ref={menuRef}
       id="sideMenu"
+      data-testid="sideMenu"
       role="menu"
       className="sidemenu"
       arial-labelledby="menuBtn"
     >
-      <li ref={settingsRef} role="menuitem" tabIndex="-1">
+      <li data-testid="settings" ref={settingsRef} role="menuitem" tabIndex="-1">
         Settings
       </li>
-      <li ref={aboutRef} role="menuitem" tabIndex="-1">
+      <li data-testid="about" ref={aboutRef} role="menuitem" tabIndex="-1">
         About
       </li>
-      <li onClick={logout} ref={logoutRef} role="menuitem" tabIndex="-1">
+      <li data-testid="logout" onClick={logout} ref={logoutRef} role="menuitem" tabIndex="-1">
         Log Out
       </li>
     </ul>

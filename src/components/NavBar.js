@@ -29,6 +29,7 @@ function NavBar(props) {
       {props.mode !== AppMode.LOGIN && !props.modalOpen &&(
         <button
           id="menuBtn"
+          data-testid="menuBtn"
           type="button"
           className="navbar-btn"
           title="Menu"
@@ -52,6 +53,7 @@ function NavBar(props) {
         {displaySearchBox && (
           <input
             id="searchBox"
+            data-testid="searchBox"
             className="form-control"
             aria-label="Search Rounds"
             size="30"
@@ -63,17 +65,20 @@ function NavBar(props) {
             <button
               id="searchBtn"
               type="button"
+              data-testid="searchBtn"
               className={"navbar-btn" + (props.menuOpen || props.modalOpen ? " disabled" : "")}
               aria-label="Open Rounds Search"
             >
               <FontAwesomeIcon
                 onClick={searchBtnClickHandler}
+                data-testid="searchBtn1"
                 icon={faSearch}
                 className="navbar-btn-icon"
               />
             </button>
             <button
               id="profileBtn"
+              data-testid="profileBtn"
               onClick={profileBtnClickHandler}
               type="button"
               className={"navbar-btn navbar-profile-btn " + (props.menuOpen || props.modalOpen ? "disabled" : "")}

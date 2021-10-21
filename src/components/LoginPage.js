@@ -94,7 +94,7 @@ class LoginPage extends React.Component {
                     <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email:<br/>
                         <input id="email" type="email" className="form-control-lg centered"
-                            aria-describedby="emailDescr"
+                            aria-describedby="emailDescr" data-testid="emailInput"
                             ref={this.email} required/>
                     </label>
                     <div id="emailDescr" className="form-text">
@@ -103,7 +103,7 @@ class LoginPage extends React.Component {
                     </div>
                     <div className="mb-3">
                     <label htmlFor="password" className="form-label">Password:<br/>
-                        <input id="password" type="password" className="form-control-lg centered"
+                        <input id="password" data-testid="passwordInput" type="password" className="form-control-lg centered"
                             pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
                             aria-describedby="passwordDescr"
                             ref={this.password} required />
@@ -114,7 +114,7 @@ class LoginPage extends React.Component {
                     </div>
                     </div>
                 <p></p>
-                <button type="submit" id="loginBtn" 
+                <button type="submit" id="loginBtn" data-testid="loginBtn"
                         className="btn btn-primary fm-primary-btn">
                     <span id="loginBtnIcon" 
                         className="fas fa-sign-in-alt" 
