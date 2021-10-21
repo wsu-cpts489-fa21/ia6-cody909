@@ -52,7 +52,7 @@ function ProfileSettings(props) {
     };
   });
   return (
-    <div className="mode-page">
+    <div data-testid="settingsPage" className="mode-page">
       <div ref={pageContentRef} tabIndex="0">
         <h1 className="mode-page-header">Account & Profile</h1>
         <p className="mode-page-content">This page is under construction</p>
@@ -61,6 +61,7 @@ function ProfileSettings(props) {
       <div className="mode-page-content">
         <button
           ref={saveBtnRef}
+          data-testid="saveBtn"
           className="dialog-primary-btn"
           onClick={btnClickHandler}
         >
@@ -69,6 +70,7 @@ function ProfileSettings(props) {
         <button
           ref={cancelBtnRef}
           className="dialog-cancel-btn"
+          data-testid="cancelBtn"
           onClick={btnClickHandler}
         >
           Cancel
